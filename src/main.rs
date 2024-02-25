@@ -11,9 +11,14 @@ pub mod condition;
 use crate::condition::condition::check_condition;
 
 pub mod loops;
+use crate::loops::break_continue::break_continue_test;
 use crate::loops::for_loop::test_for::test_for;
 use crate::loops::loop_loop::test_loop::test_loop;
+use crate::loops::scops_shadowing::scops_shadowing_test;
 use crate::loops::while_loop::test_while::test_while;
+
+pub mod collatz_sentence;
+use crate::collatz_sentence::collatz_sentence::collatz_sentence_test;
 
 fn main() {
     println!("========================================");
@@ -53,4 +58,13 @@ fn main() {
     test_while();
     test_loop();
     test_for();
+    break_continue_test();
+    scops_shadowing_test();
+
+    println!("========================================");
+    println!("6. Collatz Sentence");
+    let n = collatz_sentence_test(11);
+    println!("Collatz Sentence: {}", n);
+
+
 }
