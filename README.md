@@ -3,3 +3,4 @@ This is a playground for Rust programming language. I will be adding some code s
 
 - cargo new rust_cargo_playgorund
 - cargo run
+- cargo build --release
