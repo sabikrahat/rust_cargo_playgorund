@@ -25,6 +25,10 @@ use crate::tuples_arrays::arrays_test::arrays_test;
 use crate::tuples_arrays::nested_arrays::nested_arrays_transpose;
 use crate::tuples_arrays::tuples_test::tuples_test;
 
+pub mod reference;
+use crate::reference::shared_reference::shared_reference_test;
+use crate::reference::exclusive_reference::exclusive_reference_test;
+
 fn main() {
     println!("========================================");
     println!("Rust Practices - Sabik Rahat");
@@ -88,4 +92,9 @@ fn main() {
     ];
     let r = nested_arrays_transpose(matrix);
     println!("Nested Arrays: {:#?}", r);
+
+    println!("========================================");
+    println!("10. Reference");
+    shared_reference_test();
+    exclusive_reference_test();
 }
