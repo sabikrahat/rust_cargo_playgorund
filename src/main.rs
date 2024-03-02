@@ -20,6 +20,11 @@ use crate::loops::while_loop::test_while::test_while;
 pub mod collatz_sentence;
 use crate::collatz_sentence::collatz_sentence::collatz_sentence_test;
 
+pub mod tuples_arrays;
+use crate::tuples_arrays::arrays_test::arrays_test;
+use crate::tuples_arrays::nested_arrays::nested_arrays_transpose;
+use crate::tuples_arrays::tuples_test::tuples_test;
+
 fn main() {
     println!("========================================");
     println!("Rust Practices - Sabik Rahat");
@@ -66,5 +71,21 @@ fn main() {
     let n = collatz_sentence_test(11);
     println!("Collatz Sentence: {}", n);
 
+    println!("========================================");
+    println!("7. Arrays");
+    arrays_test();
 
+    println!("========================================");
+    println!("8. Tuples");
+    tuples_test();
+
+    println!("========================================");
+    println!("9. Nested Arrays");
+    let matrix = [
+        [101, 102, 103], // <-- the comment makes rustfmt add a newline
+        [201, 202, 203],
+        [301, 302, 303],
+    ];
+    let r = nested_arrays_transpose(matrix);
+    println!("Nested Arrays: {:#?}", r);
 }
